@@ -34,21 +34,5 @@ Cabin Cabin number of the passenger (Some entries contain NaN)
 Embarked: Port of embarkation of the passenger (C = Cherbourg; Q = Queenstown; S = Southampton)
 Since we're interested in the outcome of survival for each passenger or crew member, we can remove the Survived feature from this dataset and store it as its own separate variable outcomes. We will use these outcomes as our prediction targets.
 
-Decision Functions
-
-Check for the sex of survived passengers
-survival_stats(data, outcomes, 'Sex')
-png
-
-Check for the age of survived passengers
-survival_stats(data, outcomes, 'Age', ["Sex == 'male'"])
-png
-
-Building a more complex decision tree using multiple filter conditions
-survival_stats(data, outcomes, 'SibSp', ["Sex == 'female'" or "Age <15 " and "Pclass=3" and "Embarked != 'S' "])
-png
-
-Accuracy
-
 print accuracy_score(outcomes, predictions)
 Predictions have an accuracy of 80.36%
